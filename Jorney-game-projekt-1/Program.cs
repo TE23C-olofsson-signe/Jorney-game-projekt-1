@@ -32,7 +32,7 @@ static void Jinx()
 {
     bool clear = false; 
   while(!clear){
-    
+    List<>
   }
 }
 Console.ReadLine(); 
