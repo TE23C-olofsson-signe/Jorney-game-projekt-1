@@ -1,49 +1,64 @@
 ﻿// Karaktärer man kan välja att gå ett äventyr med. 
-bool done= false; 
+bool done = false;
+string name = "";
 while (!done)
 {
-List<string> character = ["Jinx", "Vi", "Ekko", "Catlyn", "Vander" ];
+    List<string> character = ["Jinx", "Vi", "Ekko", "Catlyn", "Vander"];
 
-Console.WriteLine("Skriv ett namn från listan");
-for (int i = 0; i < 5; i++)
-{
-    Console.WriteLine(character[i]);
-}
+    Console.WriteLine("Skriv ett namn från listan");
+    for (int i = 0; i < 5; i++)
+    {
+        Console.WriteLine(character[i]);
+    }
 
-// Hämta in namnet
-        string name = Console.ReadLine(); 
-        // avslutar loopen om det är ett namn från listan 
+    // Hämtar in namnet
+    name = Console.ReadLine();
+    // avslutar loopen om det är ett namn från listan 
     if (character.Contains(name))
     {
-        done= true; 
+        Console.WriteLine("Nu är du" + name);
+        done = true;
     }
-    else{
-        Console.WriteLine("Nej välj en av karaktärerna i listan"); 
+    else
+    {
+        Console.WriteLine("Nej välj en av karaktärerna i listan");
     }
 }
+
 // OM namnet är Jinx
-//  Jinx()
-// ELLER OM namnet är Vi
-//  
-
-
+if (name == "Jinx")
+{
+    Jinx();
+}
 
 static void Jinx()
 {
-    bool clear = false; 
-  while(!clear){
-    List<string> weapons = ["Shock Pistol","Flame Chompers","Pistol ","Rocketlauncher"];
-    for (int i = 0; i < 4; i++)
-    {
-        Console.WriteLine(weapons[i]);
-    } 
+    Console.WriteLine("du spawnar på en rak väg du börjar gå ");
 
-    string vapen=Console.ReadLine(); 
-
-    if(weapons.Contains(vapen))
+    bool clear = false;
+    while (!clear)
     {
-        clear=true; 
+        List<string> weapons = ["Shock Pistol", "Flame Chompers", "Pistol ", "Rocketlauncher"];
+        List<int> weaponshp= [ 20, 50, 100, 120];
+        for (int i = 0; i < 4; i++)
+        {
+            Console.WriteLine(weapons[i]  + weaponshp[i]);
+        }
+
+        string vapen = Console.ReadLine();
+
+        if (weapons.Contains(vapen))
+        {
+            clear = true;
+
+        }
+        else
+        {
+            Console.WriteLine("ett vapen sa jag");
+        }
+
     }
-  }
 }
-Console.ReadLine(); 
+Jinx();
+
+Console.ReadLine();
