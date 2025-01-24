@@ -32,7 +32,18 @@ static void Jinx()
 {
     bool clear = false; 
   while(!clear){
-    List<>
+    List<string> weapons = ["Shock Pistol","Flame Chompers","Pistol ","Rocketlauncher"];
+    for (int i = 0; i < 4; i++)
+    {
+        Console.WriteLine(weapons[i]);
+    } 
+
+    string vapen=Console.ReadLine(); 
+
+    if(weapons.Contains(vapen))
+    {
+        clear=true; 
+    }
   }
 }
 Console.ReadLine(); 
