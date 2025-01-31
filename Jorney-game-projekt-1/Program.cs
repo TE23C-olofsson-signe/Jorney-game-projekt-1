@@ -10,7 +10,7 @@ while (!done)
     {
         Console.WriteLine(item);
     }
-    
+
     PrintPrompt();
 
     // Hämtar in namnet
@@ -19,7 +19,7 @@ while (!done)
     if (character.Contains(name))
     {
         Console.WriteLine();
-        Console.WriteLine("Nu är du "  + name);
+        Console.WriteLine("Nu är du " + name);
         done = true;
     }
     else
@@ -34,40 +34,35 @@ if (name == "Jinx")
     Jinx();
 }
 
-static void PrintPrompt()
-{
-    Console.WriteLine("");
-    Console.Write("> ");
-}
 
 static void Jinx()
 {
 
-    Console.WriteLine(); 
+    Console.WriteLine();
     // Få ett vapen 
-    Console.WriteLine("Du spanar på en rak väg. Du börjar gå tills du träffar en vän. Han säger att du måste välja mellan fyra vapen. ");
-    
+    Console.WriteLine("Du spanar på en rak väg. Du börjar gå tills du träffar en vän. Han säger att du måste välja mellan fyra vapen.");
 
-    bool clear = false; 
+
+    bool clear = false;
     string weaponname = "";
 
     List<string> arm = ["ShockPistol", "Pistol", "FlameChompers", "Rocketlauncher"];
- 
+
     while (!clear)
     {
         foreach (var item in arm)
         {
-            Console.WriteLine(item); 
+            Console.WriteLine(item);
         }
-        PrintPrompt();
 
-        weaponname = Console.ReadLine(); 
+
+        weaponname = Console.ReadLine();
 
         if (arm.Contains(weaponname))
         {
-            clear=true; 
-            Console.WriteLine(); 
-            Console.WriteLine("Nu har du " + weaponname); 
+            clear = true;
+            Console.WriteLine();
+            Console.WriteLine("Nu har du " + weaponname);
         }
         else
         {
@@ -76,52 +71,99 @@ static void Jinx()
     }
 
     Console.WriteLine();
+    int Villain_hp = 450;
 
-    int ShockPistol_hp = 20; 
-    int Pistol_hp =50; 
-    int FlameChompers_hp=100;
-    int Rocketlauncher_hp=150;
-    int Villain_hp= 450;  
+    string villain_name = "Ambessa";
+    string villain_name2 = "Catlyn";
+    string villain_name3 = "Rictus";
+    string villain_name4 = "Sevika";
 
-    string villain_name= "Ambessa"; 
-    string villain_name2= "Catlyn"; 
-    string villain_name3= "Viktor"; 
-    string villain_name4= "Rictus"; 
-    string villain_name5= "Sevika"; 
-    
     Console.WriteLine("Beronde på vilket vapen du har är det en skurk du behöver slå innan du kan ta dig vidare");
+    int yourWeaponHp = 0;
+    string villainName = "";
 
-    if(weaponname=="ShockPistol")
+    if (weaponname == "ShockPistol")
     {
-       while(Villain_hp > 0)
-       {
-        Console.WriteLine("\n-----====Slå Ambessa====----"); 
-        Console.WriteLine($"{weaponname}:{ShockPistol_hp} {villain_name}: {Villain_hp}\n"); 
+        yourWeaponHp = 20;
+        villainName = villain_name;
+    }
+    else if (weaponname == "Pistol")
+    {
+        yourWeaponHp = 50;
+        villainName = villain_name4;
+    }
 
-      int weaponDamage =20;
-      Villain_hp -= weaponDamage;
-      Villain_hp = Math.Max(0, Villain_hp); 
-      Console.WriteLine($"{weaponname} gör {weaponDamage} skada på {villain_name}");
+    else if (weaponname == "Rocketlauncher")
+    {
+        yourWeaponHp = 150;
+        villainName = villain_name2;
+
+    }
+
+    else if (weaponname == "FlameChompers")
+    {
+        yourWeaponHp = 100;
+        villainName = villain_name3;
+    }
+
+
+
+    while (Villain_hp > 0)
+    {
+        Console.WriteLine("\n-----====Skurken====----");
+        Console.WriteLine($"{weaponname}:{yourWeaponHp} {villainName}: {Villain_hp}\n");
+
+        int weaponDamage = yourWeaponHp;
+        Villain_hp -= weaponDamage;
+        Villain_hp = Math.Max(0, Villain_hp);
+        Console.WriteLine($"{weaponname} gör {weaponDamage} skada på {villainName}");
 
         Console.ReadKey();
-       }
     }
 
-    if(weaponname=="Pistol")
-    {
-        while (Villain_hp>0)
-        {
-             Console.WriteLine("\n-----====Slå Ambessa====----");
-             Console.WriteLine($"{weaponname}:{Pistol_hp} {villain_name2}: {Villain_hp}\n");
+    Console.WriteLine("Yay du slog " + villainName);
 
-             int weaponDamage=50; 
-             Villain_hp -= weaponDamage;
-             Villain_hp = Math.Max(0,Villain_hp); 
-             Console.WriteLine($"{weaponname}gör {weaponDamage}skada på {villain_name2}");
-             Console.ReadKey(); 
+    Console.WriteLine();
+
+
+    Console.WriteLine(" du börjar gå, du stannar vid en korsning du kan antingen gå ");
+    List<string> direction = ["Höger", "Vänster", "Höger Upp", "Vänster Upp"];
+    string choosingDirection = "";
+    bool right = false;
+    while (!right)
+    {
+
+
+        foreach (var item in direction)
+        {
+            Console.WriteLine(item);
+        }
+
+        choosingDirection = Console.ReadLine();
+
+        if (direction.Contains(choosingDirection))
+        {
+            Console.WriteLine("du går åt " + choosingDirection);
         }
     }
-    
+
+    string saving = "Isha";
+    string saving2 = "Silco";
+    string saving3 = "Mylo";
+    string saving4 = "Claggor";
+
+    string saved;
+
+    if (choosingDirection == "Höger")
+    {
+        saved = "Isha";
+        Console.WriteLine($"När Ambessa fick tillbaka sin kraft tog hon {saved} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)");
+    }
+    else if (choosingDirection=="Vänster")
+    {
+        saved="Silco";
+        Console.WriteLine($"När Sevika fick tillbaka sin kraft tog hon {saved} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)");
+    }
 
 }
 
