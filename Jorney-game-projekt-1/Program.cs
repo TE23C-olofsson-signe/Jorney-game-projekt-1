@@ -71,6 +71,8 @@ static void Jinx()
     }
 
     Console.WriteLine();
+
+    // Slå skurken med det vapen du fick 
     int Villain_hp = 450;
 
     string villain_name = "Ambessa";
@@ -125,9 +127,9 @@ static void Jinx()
 
     Console.WriteLine();
 
-
+// rikting på vart man ska gå 
     Console.WriteLine(" du börjar gå, du stannar vid en korsning du kan antingen gå ");
-    List<string> direction = ["Höger", "Vänster", "Höger Upp", "Vänster Upp"];
+    List<string> direction = ["Höger", "Vänster", "HögerUpp", "VänsterUpp"];
     string choosingDirection = "";
     bool right = false;
     while (!right)
@@ -147,24 +149,66 @@ static void Jinx()
         }
     }
 
-    string saving = "Isha";
-    string saving2 = "Silco";
-    string saving3 = "Mylo";
-    string saving4 = "Claggor";
-
+    int Badguyhp= 460; 
+    string Badguyname="Ambessa";
+    string Badguyname2="Sevika";
+    string Badguyname3="Rictus";
+    string Badguyname4="Catlyn";
     string saved;
-
+    string BadguyName; 
+    string yourArmHp=0; 
     if (choosingDirection == "Höger")
     {
-        saved = "Isha";
-        Console.WriteLine($"När Ambessa fick tillbaka sin kraft tog hon {saved} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)");
+        BadguyName=Badguyname; 
+        saved = "Claggor";
+        Console.WriteLine($"När {Badguyname} fick tillbaka sin kraft tog hon {saved} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)");
+        yourArmHp = 40; 
+     
     }
-    else if (choosingDirection=="Vänster")
+    else if (choosingDirection == "Vänster")
     {
-        saved="Silco";
-        Console.WriteLine($"När Sevika fick tillbaka sin kraft tog hon {saved} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)");
+        BadguyName=Badguyname2;
+        saved = "Silco";
+        Console.WriteLine($"När {Badguyname2} fick tillbaka sin kraft tog hon {saved} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)");
+        yourArmHp= 100; 
+      
     }
 
+    else if (choosingDirection == "HögerUpp")
+    {
+        BadguyName=Badguyname3;
+        saved = "Mylo";
+        Console.WriteLine($"När{Badguyname3} fick tillbaka sin kraft tog hon {saved} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)");
+        yourArmHp=200; 
+
+    }
+    else if (choosingDirection == "VänsrerUpp")
+    {
+        BadguyName=Badguyname4;
+        saved = "Isha";
+        Console.WriteLine($"När {Badguyname4} fick tillbaka sin kraft tog hon {saved} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)");
+        yourArmHp= 300; 
+
+    }
+    
+
+    while (Badguyhp>0)
+    {
+                Console.WriteLine("\n-----==== Slå Skurken och Rädda någon====----");
+        Console.WriteLine($"{choosingDirection}:{yourArmHp} {BadguyName}: {Badguyhp}\n");
+
+        int armDamage = yourArmHp;
+       Badguyhp -= armDamage;
+      Badguyhp = Math.Max(0, Badguyhp);
+        Console.WriteLine($"{choosingDirection} gör {armDamage} skada på {BadguyName}");
+
+        Console.ReadKey();
+
+    }
+
+    Console.WriteLine("yay du lyckades rädda"+saved);
+
+    Console.WriteLine("Du är klar med äventryret."); 
 }
 
 
