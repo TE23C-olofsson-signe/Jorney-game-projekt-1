@@ -1,4 +1,6 @@
 ﻿// Karaktärer man kan välja att gå ett äventyr med. 
+using System.Diagnostics;
+
 bool done = false;
 string name = "";
 while (!done)
@@ -11,7 +13,7 @@ while (!done)
         Console.WriteLine(item);
     }
 
-    PrintPrompt();
+
 
     // Hämtar in namnet
     name = Console.ReadLine();
@@ -33,6 +35,10 @@ if (name == "Jinx")
 {
     Jinx();
 }
+else if (name== "Vi")
+{
+    
+}
 
 
 static void Jinx()
@@ -40,7 +46,7 @@ static void Jinx()
 
     Console.WriteLine();
     // Få ett vapen 
-    Console.WriteLine("Du spanar på en rak väg. Du börjar gå tills du träffar en vän. Han säger att du måste välja mellan fyra vapen.");
+    Console.WriteLine("Du spawnar på en rak väg i piltmore. Du börjar gå tills du träffar en vän. Han säger att du måste välja mellan fyra vapen.");
 
 
     bool clear = false;
@@ -76,9 +82,9 @@ static void Jinx()
     int Villain_hp = 450;
 
     string villain_name = "Ambessa";
-    string villain_name2 = "Catlyn";
+    string villain_name2 = "";
     string villain_name3 = "Rictus";
-    string villain_name4 = "Sevika";
+    string villain_name4 = "Catlyn";
 
     Console.WriteLine("Beronde på vilket vapen du har är det en skurk du behöver slå innan du kan ta dig vidare");
     int yourWeaponHp = 0;
@@ -92,20 +98,20 @@ static void Jinx()
     else if (weaponname == "Pistol")
     {
         yourWeaponHp = 50;
-        villainName = villain_name4;
-    }
-
-    else if (weaponname == "Rocketlauncher")
-    {
-        yourWeaponHp = 150;
         villainName = villain_name2;
-
     }
 
     else if (weaponname == "FlameChompers")
     {
         yourWeaponHp = 100;
         villainName = villain_name3;
+
+    }
+
+    else if (weaponname == "Rocketlauncher")
+    {
+        yourWeaponHp = 150;
+        villainName = villain_name4;
     }
 
 
@@ -128,7 +134,7 @@ static void Jinx()
     Console.WriteLine();
 
 // rikting på vart man ska gå 
-    Console.WriteLine(" du börjar gå, du stannar vid en korsning du kan antingen gå ");
+    Console.WriteLine(" Du börjar gå, du stannar vid en korsning du kan antingen gå ");
     List<string> direction = ["Höger", "Vänster", "HögerUpp", "VänsterUpp"];
     string choosingDirection = "";
     bool right = false;
@@ -146,69 +152,82 @@ static void Jinx()
         if (direction.Contains(choosingDirection))
         {
             Console.WriteLine("du går åt " + choosingDirection);
+            right=true; 
+        }
+        else
+        {
+            Console.WriteLine("Jag sa ett rikting ");
         }
     }
 
     int Badguyhp= 460; 
-    string Badguyname="Ambessa";
-    string Badguyname2="Sevika";
-    string Badguyname3="Rictus";
-    string Badguyname4="Catlyn";
-    string saved;
-    string BadguyName; 
-    string yourArmHp=0; 
+    
+    string saved = ""; 
+    
     if (choosingDirection == "Höger")
     {
-        BadguyName=Badguyname; 
+       
         saved = "Claggor";
-        Console.WriteLine($"När {Badguyname} fick tillbaka sin kraft tog hon {saved} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)");
-        yourArmHp = 40; 
+        Console.WriteLine($"När {villain_name} fick tillbaka sin kraft tog hon {saved} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)");
+        yourWeaponHp = 40; 
+        weaponname= "Shockpistol"; 
+        villainName=villain_name; 
      
     }
     else if (choosingDirection == "Vänster")
     {
-        BadguyName=Badguyname2;
+       
         saved = "Silco";
-        Console.WriteLine($"När {Badguyname2} fick tillbaka sin kraft tog hon {saved} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)");
-        yourArmHp= 100; 
-      
+        Console.WriteLine($"När {villain_name2} fick tillbaka sin kraft tog hon {saved} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)");
+        yourWeaponHp= 100; 
+        weaponname="Pistol";
+         villainName=villain_name2;
+        
     }
 
     else if (choosingDirection == "HögerUpp")
     {
-        BadguyName=Badguyname3;
+        
         saved = "Mylo";
-        Console.WriteLine($"När{Badguyname3} fick tillbaka sin kraft tog hon {saved} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)");
-        yourArmHp=200; 
+        Console.WriteLine($"När{villain_name3} fick tillbaka sin kraft tog hon {saved} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)");
+        yourWeaponHp= 200; 
+        weaponname="FlameChompers";
+         villainName=villain_name3;
 
     }
     else if (choosingDirection == "VänsrerUpp")
     {
-        BadguyName=Badguyname4;
-        saved = "Isha";
-        Console.WriteLine($"När {Badguyname4} fick tillbaka sin kraft tog hon {saved} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)");
-        yourArmHp= 300; 
 
+        saved = "Isha";
+        Console.WriteLine($"När {villain_name4} fick tillbaka sin kraft tog hon {saved} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)");
+        yourWeaponHp=300; 
+        weaponname= "Rocketlauncher";
+         villainName=villain_name4;
     }
     
-
-    while (Badguyhp>0)
+     while (Badguyhp > 0)
     {
-                Console.WriteLine("\n-----==== Slå Skurken och Rädda någon====----");
-        Console.WriteLine($"{choosingDirection}:{yourArmHp} {BadguyName}: {Badguyhp}\n");
+        Console.WriteLine("\n-----====Rädda Någon ====----");
+        Console.WriteLine($"{choosingDirection}:{yourWeaponHp} {villainName}: {Badguyhp}\n");
 
-        int armDamage = yourArmHp;
-       Badguyhp -= armDamage;
-      Badguyhp = Math.Max(0, Badguyhp);
-        Console.WriteLine($"{choosingDirection} gör {armDamage} skada på {BadguyName}");
+        int weaponDamage = yourWeaponHp;
+        Badguyhp -= weaponDamage;
+        Badguyhp = Math.Max(0, Badguyhp);
+        Console.WriteLine($"{weaponname} gör {weaponDamage} skada på {villainName}");
 
         Console.ReadKey();
-
     }
 
-    Console.WriteLine("yay du lyckades rädda"+saved);
+   
+
+    Console.WriteLine("yay du lyckades rädda "+saved);
 
     Console.WriteLine("Du är klar med äventryret."); 
+}
+
+static void Vi()
+{
+    Console.WriteLine("Du spawnar i the under city vid bron du börjar gå framåt till du möter din vän Babbete");
 }
 
 
