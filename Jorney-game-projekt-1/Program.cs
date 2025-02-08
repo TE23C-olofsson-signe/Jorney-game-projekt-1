@@ -41,9 +41,14 @@ else if (name == "Vi")
     Vi();
 }
 
-else if (name=="EKko")
+else if (name=="Ekko")
 {
     Ekko(); 
+}
+
+else if (name=="Caitlyn")
+{
+    Caitlyn();
 }
 
 
@@ -85,8 +90,8 @@ static void Jinx()
 
     Console.WriteLine();
 
-    // Vilka skurkar man kan slå med det vapen du vaöde 
-    int Villain_hp = 450;
+    // Vilka skurkar man kan slå med det vapen du valde 
+    int Villain_hp = 750;
 
 
     Console.WriteLine("Beronde på vilket vapen du har är det en skurk du behöver slå innan du kan ta dig vidare");
@@ -103,7 +108,7 @@ static void Jinx()
     else if (weaponname == "Pistol")
     {
         yourWeaponHp = 50;
-        villainName = "Maddie";
+        villainName = "Maddi";
     }
 
     else if (weaponname == "FlameChompers")
@@ -155,7 +160,7 @@ static void Jinx()
     Console.WriteLine();
 
     //  rädda och skurkarna hitpoints 
-    int Villain_hp2 = 460;
+    int Villain_hp2 = 760;
 
     string saved = "";
 
@@ -213,7 +218,6 @@ static void Vi()
 
     // Vaperna Vi kan välja 
     List<string> weapon = ["Atlas Gauntlets", "Blast Shield", "Pilbåge", "Golem Gan"];
-    string armname;
 
     foreach (var item in weapon)
     {
@@ -221,6 +225,7 @@ static void Vi()
     }
 
     bool look = false;
+    string armname;
     armname = Console.ReadLine();
 
     while (!look)
@@ -239,14 +244,14 @@ static void Vi()
     Console.WriteLine();
 
 
-    Console.WriteLine("Du kommer möta en skurk beronde på vilket vapen du valde.");
+    Console.WriteLine("Beronde på vilket vapen du har är det en skurk du behöver slå innan du kan ta dig vidare");
 
-    //Skurkarna Hp och ditt vapen Hp 
+    //Skurkarnas Hp,objekt för skurkarnas namn och objek för ditt vapen hp
     string Badguy = "";
-    int BadguyHp = 550;
+    int BadguyHp = 450;
     int yourArmhp = 0;
 
-    //Vilket vapen man väljer och dess hitpoints,Skurkensnamn också
+    //Vilket vapen man valde  hitpoints och Skurkensnamn 
     if (armname == "Atlas Goutlet")
     {
         Badguy = "Viktor";
@@ -255,17 +260,17 @@ static void Vi()
     else if (armname == "Blast Shield")
     {
         Badguy = "Ambessa";
-        yourArmhp = 50;
+        yourArmhp = 70;
     }
     else if (armname == "Pilbåge")
     {
         Badguy = "Sevika";
-        yourArmhp = 100;
+        yourArmhp = 110;
     }
     else if (armname == "Golem Gan")
     {
         Badguy = "Silco";
-        yourArmhp = 150;
+        yourArmhp = 160;
     }
 
     // Kallar på metoden 
@@ -299,36 +304,41 @@ static void Vi()
 
     // Skurkarnas nya hp och ditt dubbla hp 
     string taken = "";
-    int BadguyHp2 = 560;
+    int BadguyHp2 = 460;
     int yourArmhp2 = 0;
 
     if (chooseDirektion=="Höger")
     {
         taken="Loris";
         Badguy="Viktor";
+        Console.WriteLine($"När {Badguy} fick tillbaka sin kraft tog hon {taken} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)");
         armname="Atlas Goutlet";
         yourArmhp2=60;
+
     }
     else if (chooseDirektion=="Vänster")
     {
         taken="Jayce";
         Badguy="Ambessa";
+        Console.WriteLine($"När {Badguy} fick tillbaka sin kraft tog hon {taken} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)"); 
         armname="Blast Shield";
-        yourArmhp2=100; 
+        yourArmhp2=140;
     }
     else if (chooseDirektion=="Vänster Vänster")
     {
         taken="Caitlyn"; 
         Badguy="Sevika";
+        Console.WriteLine($"När {Badguy} fick tillbaka sin kraft tog hon {taken} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)"); 
         armname="Pilbåge";
-        yourArmhp2=200; 
+        yourArmhp2=220;
     }
     else if (chooseDirektion=="Höger Höger")
     {
         taken="Powder";
         Badguy="Silco";
+        Console.WriteLine($"När {Badguy} fick tillbaka sin kraft tog hon {taken} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)");
         armname="Golem Gan";
-        yourArmhp2=300; 
+        yourArmhp2=320; 
     }
 
     // Kallar på metoden 
@@ -338,11 +348,258 @@ static void Vi()
 
 static void Ekko()
 {
-       // Ekkos start punkt och 
+       // Ekkos start punkt och få välja ett vapen 
         Console.WriteLine("Du spawnar i zaun vid the firefighter base  du börjar gå framåt till du möter din vän Powder");
         Console.WriteLine("Hon säger att du ska välja ett av fyra vapen");
 
-        
+        // Lista vapen som Ekko kan välja¨
+        List<string> Gun =["Sword","Bat","Smoke Grenade","Hoverboard"];
+        string gunName; 
+
+        foreach (var item in Gun)
+        {
+            Console.WriteLine(item); 
+        }
+
+        //loopens vilkor och hämtar vapentets namn 
+        bool cola= false; 
+        gunName=Console.ReadLine();
+
+        // går tills Namnet matchar  listan 
+        while (!cola)
+        {
+            if (Gun.Contains(gunName))
+            {
+                Console.WriteLine("Du har"+gunName);
+                cola=true;
+            }
+            else
+            {
+                Console.WriteLine("Ett vapen från listan ");
+            }
+        }
+
+        Console.WriteLine();
+
+        Console.WriteLine("Beronde på vilket vapen du har är det en skurk du behöver slå innan du kan ta dig vidare");
+
+         //Skurkarnas Hp,objekt för skurkarnas namn och objek för ditt vapen hp
+        string crook="";
+        int crookHp=350; 
+        int yourGunHp=0; 
+
+        //Vilket vapen man valde  hitpoints och Skurkensnamn
+        if (gunName=="Sword")
+        {
+            crook="Marcus";
+            yourGunHp=10; 
+        }
+        else if (gunName=="Bat")
+        {
+            crook="Renni";
+            yourGunHp=80;
+        }
+        else if (gunName=="Smoke Grenade")
+        {
+            crook="Lock";
+            yourGunHp=120;
+        }
+        else if (gunName=="Hoverboard")
+        {
+            crook="Silco";
+            yourGunHp=170; 
+        }
+
+        //Kallar på metoden
+        FirstFight(gunName,"Ekko",crook,yourGunHp,crookHp);
+
+        Console.WriteLine("Du kommer till en korsning du kan välja mellan att gå");
+        List<string> vägbeskrivning=["Höger","Vänster","Upp","Höger Vänster"];
+        string choosingVägbeskrivning;
+
+        foreach (var item in vägbeskrivning)
+        {
+            Console.WriteLine(item);
+        }
+
+        choosingVägbeskrivning=Console.ReadLine();
+        bool sprite=false; 
+
+        while (!sprite)
+        {
+            if (vägbeskrivning.Contains(choosingVägbeskrivning))
+            {
+                Console.WriteLine("Du valde att gå åt"+choosingVägbeskrivning);
+                sprite=true;
+            }
+            else
+            {
+                Console.WriteLine("Jag sa välj vilket håll du ska gå");
+            }
+        }
+
+        string rescue="";
+        int crookHp2=360; 
+        int yourGunHp2=0;
+
+        if (choosingVägbeskrivning=="Höger")
+        {
+            rescue="Eve";
+            crook="Marcus";
+            Console.WriteLine($"När {crook} fick tillbaka sin kraft tog hon {rescue} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)");
+            gunName="Sword";
+            yourGunHp2=20;
+        }
+        else if (choosingVägbeskrivning=="Vänster")
+        {
+            rescue="Scar";
+            crook="Renni";
+            Console.WriteLine($"När {crook} fick tillbaka sin kraft tog hon {rescue} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)");
+            gunName="Bat";
+            yourGunHp2=160;
+        }
+        else if (choosingVägbeskrivning=="Upp")
+        {
+            rescue="Heimerdinger";
+            crook="Lock";
+            Console.WriteLine($"När {crook} fick tillbaka sin kraft tog hon {rescue} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)");
+            gunName="Smoke Grenade";
+            yourGunHp2=240;
+        }
+        else if (choosingVägbeskrivning=="Höger Vänster")
+        {
+            rescue="Benzo";
+            crook="Silco";
+            Console.WriteLine($"När {crook} fick tillbaka sin kraft tog hon {rescue} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)");
+            gunName="Hoverboard";
+            yourGunHp2=340;
+        }
+
+        //Kallar på metod
+        SavingFight(rescue,crook, "Ekko", crookHp2, gunName, yourGunHp2);
+
+}
+
+static void Caitlyn()
+{
+    Console.WriteLine("Du spawnar i the under city vid bron du börjar gå framåt till du möter din vän Vi");
+    Console.WriteLine("Hon säger att du måste välja mellan fyra vapen.");
+
+    List<string> armor=["Peacemaker","Caliber Net","Ace in the Hole","Hextech Riffle"];
+    string armorName;
+
+    foreach (var item in armor)
+    {
+        Console.WriteLine(item);
+    }
+
+    bool cake=false;
+    armorName=Console.ReadLine();
+
+    while (!cake)
+    {
+        if (armor.Contains(armorName))
+        {
+            Console.WriteLine("Du valde"+armorName);
+            cake=true;
+        }
+        else
+        {
+        Console.WriteLine("Ett vapen från listan ");
+        }   
+    }
+
+    string rogue="";
+    int rogueHp=550;
+    int yourArmorHp=0;
+
+    if (armorName=="Peacemaker")
+    {
+        rogue="Silco";
+        yourArmorHp=40;
+
+    }
+    else if (armorName=="Caliber Net")
+    {
+        rogue="Ambessa";
+        yourArmorHp=60;
+    }
+    else if (armorName=="Ace in the Hole")
+    {
+        rogue="Maddi";
+        yourArmorHp=130;
+    }
+    else if (armorName=="Hextech Riffle")
+    {
+        rogue="Jinx";
+        yourArmorHp=180;
+    }
+
+    FirstFight(armorName,"Caitlyn",rogue,yourArmorHp,rogueHp);
+    
+    Console.WriteLine("Du kommer till en korsning du kan välja mellan att gå");
+    List<string> wayinstruction=["Höger","Höger Vänster","Vänster","Vänster Höger"];
+    string chooseWayinsruction;
+
+    foreach (var item in wayinstruction)
+    {
+        Console.WriteLine(item);
+    }
+
+    bool cream=false;
+    chooseWayinsruction=Console.ReadLine();
+
+    while (!cream)
+    {
+        if (wayinstruction.Contains(chooseWayinsruction))
+        {
+            Console.WriteLine("Du valde att gå åt"+chooseWayinsruction);
+            cream=true; 
+        }
+        else
+        {
+            Console.WriteLine("Välj en åt vilket håll du ska gå");
+        }
+    }
+
+    string salvage="";
+    int rogueHp2=560;
+    int yourArmorHp2=0; 
+    
+    if (chooseWayinsruction=="Höger")
+    {
+        salvage="Jayce";
+        rogue="Silco";
+        Console.WriteLine($"När {rogue} fick tillbaka sin kraft tog hon {salvage} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)");
+        armorName="Peacemaker";
+        yourArmorHp2=80;
+    }
+    else if (chooseWayinsruction=="Höger Vänster")
+    {
+        salvage="Ekko";
+        rogue="Ambessa";
+        Console.WriteLine($"När {rogue} fick tillbaka sin kraft tog hon {salvage} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)");
+        armorName="Caliber Net";
+        yourArmorHp2=120; 
+    }
+    else if (chooseWayinsruction=="Vänster")
+    {
+        salvage="Tobias";
+        rogue="Maddi";
+        Console.WriteLine($"När {rogue} fick tillbaka sin kraft tog hon {salvage} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)");
+        armorName="Ace in the Hole";
+        yourArmorHp2=260;
+    }
+    else if (chooseWayinsruction=="Vänster Höger")
+    {
+        salvage="Cassandra";
+        rogue="Jinx";
+        Console.WriteLine($"När {rogue} fick tillbaka sin kraft tog hon {salvage} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)");
+        armorName="Hextech Riffle";
+        yourArmorHp2=360;
+    }
+
+    SavingFight(salvage,rogue,"Caitlyn",rogueHp2,armorName,yourArmorHp2);
 }
 
 
