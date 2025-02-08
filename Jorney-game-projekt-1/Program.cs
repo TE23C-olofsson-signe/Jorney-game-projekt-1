@@ -5,7 +5,7 @@ bool done = false;
 string name = "";
 while (!done)
 {
-    List<string> character = ["Jinx", "Vi", "Ekko", "Vander"];
+    List<string> character = ["Jinx", "Vi", "Ekko","Caitlyn", "Vander"];
 
     Console.WriteLine("Skriv ett namn från listan");
     foreach (var item in character)
@@ -41,12 +41,17 @@ else if (name == "Vi")
     Vi();
 }
 
+else if (name=="EKko")
+{
+    Ekko(); 
+}
+
 
 static void Jinx()
 {
 
     Console.WriteLine();
-    // Få ett vapen 
+    // Få ett vapen och start punkt 
     Console.WriteLine("Du spawnar på en rak väg i piltmore. Du börjar gå tills du träffar din  vän Silco.");
     Console.WriteLine("Han säger att du måste välja mellan fyra vapen.");
 
@@ -63,7 +68,7 @@ static void Jinx()
 
     while (!clear)
     {
-
+        // Hämtar in vapen namnet och kör loopen tills det är ett namn i listan 
         weaponname = Console.ReadLine();
 
         if (arm.Contains(weaponname))
@@ -80,7 +85,7 @@ static void Jinx()
 
     Console.WriteLine();
 
-    // Slå skurken med det vapen du fick 
+    // Vilka skurkar man kan slå med det vapen du vaöde 
     int Villain_hp = 450;
 
 
@@ -133,7 +138,7 @@ static void Jinx()
     }
     while (!right)
     {
-
+        // Hämtar in direktionen som du valde 
         choosingDirection = Console.ReadLine();
 
         if (direction.Contains(choosingDirection))
@@ -202,7 +207,7 @@ static void Jinx()
 
 static void Vi()
 {
-    // Vi spawnings punkt 
+    // Vi start punkt och få  välja ett vapen 
     Console.WriteLine("Du spawnar i the under city vid bron du börjar gå framåt till du möter din vän Babbete");
     Console.WriteLine("Hon säger att du ska välja ett av fyra vapen");
 
@@ -236,7 +241,7 @@ static void Vi()
 
     Console.WriteLine("Du kommer möta en skurk beronde på vilket vapen du valde.");
 
-
+    //Skurkarna Hp och ditt vapen Hp 
     string Badguy = "";
     int BadguyHp = 550;
     int yourArmhp = 0;
@@ -263,6 +268,7 @@ static void Vi()
         yourArmhp = 150;
     }
 
+    // Kallar på metoden 
     FirstFight(armname, "Vi", Badguy, yourArmhp, BadguyHp);
 
     Console.WriteLine("Du kommer till en korsning du kan välja mellan att gå");
@@ -291,6 +297,7 @@ static void Vi()
         }
     }
 
+    // Skurkarnas nya hp och ditt dubbla hp 
     string taken = "";
     int BadguyHp2 = 560;
     int yourArmhp2 = 0;
@@ -311,7 +318,7 @@ static void Vi()
     }
     else if (chooseDirektion=="Vänster Vänster")
     {
-        taken="Catlyn"; 
+        taken="Caitlyn"; 
         Badguy="Sevika";
         armname="Pilbåge";
         yourArmhp2=200; 
@@ -324,9 +331,20 @@ static void Vi()
         yourArmhp2=300; 
     }
 
+    // Kallar på metoden 
     SavingFight(taken, Badguy, "Vi", BadguyHp2, armname, yourArmhp2);
 
 }
+
+static void Ekko()
+{
+       // Ekkos start punkt och 
+        Console.WriteLine("Du spawnar i zaun vid the firefighter base  du börjar gå framåt till du möter din vän Powder");
+        Console.WriteLine("Hon säger att du ska välja ett av fyra vapen");
+
+        
+}
+
 
 // Alla komandon   för den första striden
 static void FirstFight(string weapon, string heroName, string bruteName, int weaponHp, int bruteHp)
