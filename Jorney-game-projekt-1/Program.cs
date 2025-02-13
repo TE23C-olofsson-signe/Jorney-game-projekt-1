@@ -391,7 +391,7 @@ static void Ekko()
         //Vilket vapen man valde  hitpoints och Skurkensnamn
         if (gunName=="Sword")
         {
-            crook="Marcus";
+            crook="Chross";
             yourGunHp=10; 
         }
         else if (gunName=="Bat")
@@ -515,7 +515,7 @@ static void Caitlyn()
 
     if (armorName=="Peacemaker")
     {
-        rogue="Silco";
+        rogue="Marcus";
         yourArmorHp=40;
 
     }
@@ -623,6 +623,8 @@ static void FirstFight(string weapon, string heroName, string bruteName, int wea
     Console.WriteLine("YAY du slog" + bruteName);
 }
 
+
+
 // Alla komandon för räddnings slagsmålet
 static void SavingFight(string savingName, string bruteName, string heroName, int bruteHp2, string weapon, int weaponHp2)
 {
@@ -641,7 +643,7 @@ static void SavingFight(string savingName, string bruteName, string heroName, in
         Console.ReadKey();
     }
 
-    Console.WriteLine($"YAY du lyckaderädda{savingName} och ditt äventyr är slut");
+    Console.WriteLine($"YAY du lyckaderädda{savingName} och du lyckades med äventyr");
 
 }
 
