@@ -1,5 +1,6 @@
 ﻿// Karaktärer man kan välja att gå ett äventyr med. 
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 bool done = false;
 string name = "";
@@ -35,22 +36,6 @@ if (name == "Jinx")
 {
     Jinx();
 }
-//Om namnet är Vi
-else if (name == "Vi")
-{
-    Vi();
-}
-
-else if (name=="Ekko")
-{
-    Ekko(); 
-}
-
-else if (name=="Caitlyn")
-{
-    Caitlyn();
-}
-
 
 static void Jinx()
 {
@@ -132,7 +117,7 @@ static void Jinx()
 
     // rikting på vart man ska gå 
     Console.WriteLine(" Du börjar gå, du stannar vid en korsning du kan antingen gå ");
-    List<string> direction = ["Höger", "Vänster", "HögerUpp", "VänsterUpp"];
+    List<string> direction = ["Höger", "Vänster", "Upp", "UppHöger"];
     string choosingDirection = "";
     bool right = false;
 
@@ -208,6 +193,12 @@ static void Jinx()
     }
 
     SavingFight(saved, villainName, "Jinx", Villain_hp2, weaponname, yourWeaponHp);
+}
+
+//Om namnet är Vi
+ if (name == "Vi")
+{
+    Vi();
 }
 
 static void Vi()
@@ -346,6 +337,13 @@ static void Vi()
 
 }
 
+// Om namet är Ekko 
+ if (name=="Ekko")
+{
+    //kalla på metoden 
+    Ekko(); 
+}
+
 static void Ekko()
 {
        // Ekkos start punkt och få välja ett vapen 
@@ -414,22 +412,22 @@ static void Ekko()
         FirstFight(gunName,"Ekko",crook,yourGunHp,crookHp);
 
         Console.WriteLine("Du kommer till en korsning du kan välja mellan att gå");
-        List<string> vägbeskrivning=["Höger","Vänster","Upp","Höger Vänster"];
-        string choosingVägbeskrivning;
+        List<string> directiondescription=["Höger","Vänster","Upp","Höger Vänster"];
+        string choosingDirectiondescription;
 
-        foreach (var item in vägbeskrivning)
+        foreach (var item in directiondescription)
         {
             Console.WriteLine(item);
         }
 
-        choosingVägbeskrivning=Console.ReadLine();
+        choosingDirectiondescription=Console.ReadLine();
         bool sprite=false; 
 
         while (!sprite)
         {
-            if (vägbeskrivning.Contains(choosingVägbeskrivning))
+            if (directiondescription.Contains(choosingDirectiondescription))
             {
-                Console.WriteLine("Du valde att gå åt"+choosingVägbeskrivning);
+                Console.WriteLine("Du valde att gå åt"+choosingDirectiondescription);
                 sprite=true;
             }
             else
@@ -442,7 +440,7 @@ static void Ekko()
         int crookHp2=360; 
         int yourGunHp2=0;
 
-        if (choosingVägbeskrivning=="Höger")
+        if (choosingDirectiondescription=="Höger")
         {
             rescue="Eve";
             crook="Marcus";
@@ -450,7 +448,7 @@ static void Ekko()
             gunName="Sword";
             yourGunHp2=20;
         }
-        else if (choosingVägbeskrivning=="Vänster")
+        else if (choosingDirectiondescription=="Vänster")
         {
             rescue="Scar";
             crook="Renni";
@@ -458,7 +456,7 @@ static void Ekko()
             gunName="Bat";
             yourGunHp2=160;
         }
-        else if (choosingVägbeskrivning=="Upp")
+        else if (choosingDirectiondescription=="Upp")
         {
             rescue="Heimerdinger";
             crook="Lock";
@@ -466,7 +464,7 @@ static void Ekko()
             gunName="Smoke Grenade";
             yourGunHp2=240;
         }
-        else if (choosingVägbeskrivning=="Höger Vänster")
+        else if (choosingDirectiondescription=="Höger Vänster")
         {
             rescue="Benzo";
             crook="Silco";
@@ -480,6 +478,11 @@ static void Ekko()
 
 }
 
+// Om namet är Caitlyn 
+if (name=="Caitlyn")
+{
+    Caitlyn();
+}
 static void Caitlyn()
 {
     Console.WriteLine("Du spawnar i the under city vid bron du börjar gå framåt till du möter din vän Vi");
@@ -508,6 +511,11 @@ static void Caitlyn()
         Console.WriteLine("Ett vapen från listan ");
         }   
     }
+
+    Console.WriteLine(); 
+
+    Console.WriteLine("Beronde på vilket vapen du har är det en skurk du behöver slå innan du kan ta dig vidare");
+
 
     string rogue="";
     int rogueHp=550;
@@ -602,6 +610,96 @@ static void Caitlyn()
     SavingFight(salvage,rogue,"Caitlyn",rogueHp2,armorName,yourArmorHp2);
 }
 
+if(name=="Vander")
+{
+    Vander(); 
+}
+
+static void Vander()
+{
+    Console.WriteLine("Du spawnar i the under city vid bron du börjar gå framåt till du möter din vän Benzo");
+    Console.WriteLine("Han säger att du måste välja ett vapen av fyra"); 
+
+    List<string> vapen=["Serpent Bow","Shimmer","Knuckless","Gauntlets"];
+    string vapenName; 
+    
+    foreach (var item in vapen)
+    {
+        Console.WriteLine(item); 
+    }
+
+    bool water=false; 
+    vapenName=Console.ReadLine(); 
+
+    while (!water)
+    {
+        if (vapen.Contains(vapenName))
+        {
+            Console.WriteLine("Du har"+vapenName); 
+            water=true; 
+        }
+        else
+        {
+            Console.WriteLine("Skriv ett vapen ur listan"); 
+        }
+    }
+
+    Console.WriteLine(); 
+     Console.WriteLine("Beronde på vilket vapen du har är det en skurk du behöver slå innan du kan ta dig vidare");
+
+    int yourVapenHp=0;
+    int skurkHp=650; 
+    string Skurkensnamn=""; 
+
+    if (vapenName=="Serpentbow")
+    {
+        Skurkensnamn="Finn"; 
+        yourVapenHp=30; 
+    } 
+
+    else if (vapenName=="Shimmer")
+    {
+        Skurkensnamn="Smech"; 
+        yourVapenHp=90; 
+    }
+
+    else if (vapenName=="Knuckless")
+    {
+        Skurkensnamn="Sevika"; 
+        yourVapenHp=130; 
+    }
+
+    else if (vapenName=="Gauntlets")
+    {
+        Skurkensnamn="Silco";
+        yourVapenHp=190; 
+    }
+
+    FirstFight(vapenName,"Vander",Skurkensnamn,yourVapenHp,skurkHp);
+
+    Console.WriteLine(); 
+
+    Console.WriteLine("Du kommer till en korsning du kan välja mellan att gå");
+    List<string>vägbeskrivning=["Höger","Vänster","Upp","Uppvänster"];
+    string chooseVägberskrivning; 
+
+    foreach (var item in vägbeskrivning )
+    {
+        Console.WriteLine(item); 
+    }
+
+    bool ice=true;
+    chooseVägberskrivning=Console.ReadLine(); 
+
+    while (!ice)
+    {
+        if (vägbeskrivning.Contains(chooseVägberskrivning))
+        {
+            Console.WriteLine("Du valde att gå åt"+chooseVägberskrivning); 
+        }
+    }
+
+}
 
 // Alla komandon   för den första striden
 static void FirstFight(string weapon, string heroName, string bruteName, int weaponHp, int bruteHp)
