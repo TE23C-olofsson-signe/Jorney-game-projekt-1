@@ -177,7 +177,7 @@ static void Jinx()
 
         villainName = "Rictus";
         saved = "Mylo";
-        Console.WriteLine($"När{villainName} fick tillbaka sin kraft tog hon {saved} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)");
+        Console.WriteLine($"När{villainName} fick tillbaka sin kraft tog han {saved} tillfånga och nu utmanar han dig till strid (hans hit point har ökat +10 och ditt vapen har gångrat med 2)");
         yourWeaponHp = 200;
         weaponname = "FlameChompers";
 
@@ -311,7 +311,7 @@ static void Vi()
     {
         taken="Jayce";
         Badguy="Ambessa";
-        Console.WriteLine($"När {Badguy} fick tillbaka sin kraft tog hon {taken} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)"); 
+        Console.WriteLine($"När {Badguy} fick tillbaka sin kraft tog han {taken} tillfånga och nu utmanar han dig till strid (hans hit point har ökat +10 och ditt vapen har gångrat med 2)"); 
         armname="Blast Shield";
         yourArmhp2=140;
     }
@@ -327,7 +327,7 @@ static void Vi()
     {
         taken="Powder";
         Badguy="Silco";
-        Console.WriteLine($"När {Badguy} fick tillbaka sin kraft tog hon {taken} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)");
+        Console.WriteLine($"När {Badguy} fick tillbaka sin kraft tog han {taken} tillfånga och nu utmanar han dig till strid (hans hit point har ökat +10 och ditt vapen har gångrat med 2)");
         armname="Golem Gan";
         yourArmhp2=320; 
     }
@@ -444,7 +444,7 @@ static void Ekko()
         {
             rescue="Eve";
             crook="Marcus";
-            Console.WriteLine($"När {crook} fick tillbaka sin kraft tog hon {rescue} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)");
+            Console.WriteLine($"När {crook} fick tillbaka sin kraft tog han {rescue} tillfånga och nu utmanar han dig till strid (hans hit point har ökat +10 och ditt vapen har gångrat med 2)");
             gunName="Sword";
             yourGunHp2=20;
         }
@@ -452,7 +452,7 @@ static void Ekko()
         {
             rescue="Scar";
             crook="Renni";
-            Console.WriteLine($"När {crook} fick tillbaka sin kraft tog hon {rescue} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)");
+            Console.WriteLine($"När {crook} fick tillbaka sin kraft tog han {rescue} tillfånga och nu utmanar han dig till strid (hans hit point har ökat +10 och ditt vapen har gångrat med 2)");
             gunName="Bat";
             yourGunHp2=160;
         }
@@ -460,7 +460,7 @@ static void Ekko()
         {
             rescue="Heimerdinger";
             crook="Lock";
-            Console.WriteLine($"När {crook} fick tillbaka sin kraft tog hon {rescue} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)");
+            Console.WriteLine($"När {crook} fick tillbaka sin kraft tog han {rescue} tillfånga och nu utmanar han dig till strid (hans hit point har ökat +10 och ditt vapen har gångrat med 2)");
             gunName="Smoke Grenade";
             yourGunHp2=240;
         }
@@ -468,7 +468,7 @@ static void Ekko()
         {
             rescue="Benzo";
             crook="Silco";
-            Console.WriteLine($"När {crook} fick tillbaka sin kraft tog hon {rescue} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)");
+            Console.WriteLine($"När {crook} fick tillbaka sin kraft tog han {rescue} tillfånga och nu utmanar han dig till strid (hans hit point har ökat +10 och ditt vapen har gångrat med 2)");
             gunName="Hoverboard";
             yourGunHp2=340;
         }
@@ -577,8 +577,8 @@ static void Caitlyn()
     if (chooseWayinsruction=="Höger")
     {
         salvage="Jayce";
-        rogue="Silco";
-        Console.WriteLine($"När {rogue} fick tillbaka sin kraft tog hon {salvage} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)");
+        rogue="Marcus";
+        Console.WriteLine($"När {rogue} fick tillbaka sin kraft tog han {salvage} tillfånga och nu utmanar han dig till strid (hans hit point har ökat +10 och ditt vapen har gångrat med 2)");
         armorName="Peacemaker";
         yourArmorHp2=80;
     }
@@ -688,7 +688,7 @@ static void Vander()
         Console.WriteLine(item); 
     }
 
-    bool ice=true;
+    bool ice=false;
     chooseVägberskrivning=Console.ReadLine(); 
 
     while (!ice)
@@ -696,8 +696,53 @@ static void Vander()
         if (vägbeskrivning.Contains(chooseVägberskrivning))
         {
             Console.WriteLine("Du valde att gå åt"+chooseVägberskrivning); 
+            ice=true; 
         }
+        else
+        {
+            Console.WriteLine("Välj ett håll att gå"); 
+        }
+
     }
+
+    int skurkHP2=660; 
+    int yourVapenHp2=0; 
+    string rädda=""; 
+
+    if (chooseVägberskrivning=="Höger")
+    {
+        rädda="Grayson";
+        Skurkensnamn="Finn";
+        Console.WriteLine($"När {Skurkensnamn} fick tillbaka sin kraft tog han {rädda} tillfånga och nu utmanar han dig till strid (hans hit point har ökat +10 och ditt vapen har gångrat med 2)");
+        vapenName="Serpentbow"; 
+        yourVapenHp2=60; 
+    }
+    else if (chooseVägberskrivning=="Vänster")
+    {
+        rädda="Benzo";
+        Skurkensnamn="Smech";
+        Console.WriteLine($"När {Skurkensnamn} fick tillbaka sin kraft tog han {rädda} tillfånga och nu utmanar han  dig till strid (hans hit point har ökat +10 och ditt vapen har gångrat med 2)");
+        vapenName="Shimmer"; 
+        yourVapenHp2=180; 
+    }
+    else if (chooseVägberskrivning=="Upp")
+    {
+        rädda="Felicia";
+        Skurkensnamn="Sevika"; 
+        Console.WriteLine($"När {Skurkensnamn} fick tillbaka sin kraft tog hon {rädda} tillfånga och nu utmanar hon dig till strid (hennes hit point har ökat +10 och ditt vapen har gångrat med 2)");
+        vapenName="Knuckless"; 
+        yourVapenHp2=260;
+    }
+    else if (chooseVägberskrivning=="Uppvänster")
+    {
+        rädda="Vi"; 
+        Skurkensnamn="Silco"; 
+        Console.WriteLine($"När {Skurkensnamn} fick tillbaka sin kraft tog han {rädda} tillfånga och nu utmanar han dig till strid (hans hit point har ökat +10 och ditt vapen har gångrat med 2)");
+        vapenName="Gauntlets"; 
+        yourVapenHp2=380; 
+    }
+
+    SavingFight(Skurkensnamn,rädda,"Vander",skurkHP2,vapenName,yourVapenHp2);
 
 }
 
