@@ -554,12 +554,12 @@ static void Caitlyn()
     bool pool=false; 
     chooseWayinsruction=Console.ReadLine();
 
-    while (!done)
+    while (pool)
     {
         if (wayinstruction.Contains(chooseWayinsruction))
         {
             Console.WriteLine("Du valde att gå åt"+chooseWayinsruction);
-            done=true; 
+            pool=true; 
         }
         else
         {
@@ -626,15 +626,15 @@ static void Vander()
         Console.WriteLine(item); 
     }
 
-    bool done=false; 
+    bool pole=false; 
     vapenName=Console.ReadLine(); 
 
-    while (!done)
+    while (!pole)
     {
         if (vapen.Contains(vapenName))
         {
             Console.WriteLine("Du har"+vapenName); 
-            done=true; 
+            pole=true; 
         }
         else
         {
@@ -686,15 +686,15 @@ static void Vander()
         Console.WriteLine(item); 
     }
 
-    
+    bool leen=false;
     chooseVägberskrivning=Console.ReadLine(); 
 
-    while (!done)
+    while (!leen)
     {
         if (vägbeskrivning.Contains(chooseVägberskrivning))
         {
             Console.WriteLine("Du valde att gå åt"+chooseVägberskrivning); 
-            done=true; 
+            leen=true; 
         }
         else
         {
