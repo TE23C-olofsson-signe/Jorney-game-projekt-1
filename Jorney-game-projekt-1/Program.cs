@@ -213,16 +213,16 @@ static void Vi()
         Console.WriteLine(item);
     }
 
-    bool done = false;
+    bool fool = false;
     string armname;
     armname = Console.ReadLine();
 
-    while (!done)
+    while (!fool)
     {
         if (weapon.Contains(armname))
         {
             Console.WriteLine("Du har " + armname);
-            done = true;
+            fool = true;
         }
         else
         {
@@ -274,16 +274,16 @@ static void Vi()
     {
         Console.WriteLine(item); 
     }
-    
 
+    bool learn=false;
     chooseDirektion=Console.ReadLine(); 
 
-    while (!done)
+    while (!learn)
     {
         if (direktion.Contains(chooseDirektion))
         {
             Console.WriteLine("Du valde att gå åt"+chooseDirektion); 
-            done=true; 
+            learn=true; 
         }
         else
         {
@@ -358,16 +358,16 @@ static void Ekko()
         }
 
         //loopens vilkor och hämtar vapentets namn 
-        bool done= false; 
+        bool we= false; 
         gunName=Console.ReadLine();
 
         // går tills Namnet matchar  listan 
-        while (!done)
+        while (!we)
         {
             if (Gun.Contains(gunName))
             {
                 Console.WriteLine("Du har"+gunName);
-                done=true;
+                we=true;
             }
             else
             {
@@ -418,13 +418,14 @@ static void Ekko()
             Console.WriteLine(item);
         }
 
+        bool le=false;
         choosingDirectiondescription=Console.ReadLine();
-        while (!done)
+        while (!le)
         {
             if (directiondescription.Contains(choosingDirectiondescription))
             {
                 Console.WriteLine("Du valde att gå åt"+choosingDirectiondescription);
-                done=true;
+                le=true;
             }
             else
             {
@@ -550,7 +551,7 @@ static void Caitlyn()
         Console.WriteLine(item);
     }
 
-    
+    bool pool=false; 
     chooseWayinsruction=Console.ReadLine();
 
     while (!done)
