@@ -1,11 +1,9 @@
 ﻿// Karaktärer man kan välja att gå ett äventyr med. 
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
-
 bool done = false;
 string name = "";
 while (!done)
 {
+
     List<string> character = ["Jinx", "Vi", "Ekko","Caitlyn", "Vander"];
 
     Console.WriteLine("Skriv ett namn från listan");
@@ -182,7 +180,7 @@ static void Jinx()
         weaponname = "FlameChompers";
 
     }
-    else if (choosingDirection == "VänsrerUpp")
+    else if (choosingDirection == "UppHöger")
     {
 
         villainName = "Catlyn";
@@ -215,16 +213,16 @@ static void Vi()
         Console.WriteLine(item);
     }
 
-    bool look = false;
+    bool done = false;
     string armname;
     armname = Console.ReadLine();
 
-    while (!look)
+    while (!done)
     {
         if (weapon.Contains(armname))
         {
             Console.WriteLine("Du har " + armname);
-            look = true;
+            done = true;
         }
         else
         {
@@ -276,16 +274,16 @@ static void Vi()
     {
         Console.WriteLine(item); 
     }
-    bool icecream=false; 
+    
 
     chooseDirektion=Console.ReadLine(); 
 
-    while (!icecream)
+    while (!done)
     {
         if (direktion.Contains(chooseDirektion))
         {
             Console.WriteLine("Du valde att gå åt"+chooseDirektion); 
-            icecream=true; 
+            done=true; 
         }
         else
         {
@@ -360,16 +358,16 @@ static void Ekko()
         }
 
         //loopens vilkor och hämtar vapentets namn 
-        bool cola= false; 
+        bool done= false; 
         gunName=Console.ReadLine();
 
         // går tills Namnet matchar  listan 
-        while (!cola)
+        while (!done)
         {
             if (Gun.Contains(gunName))
             {
                 Console.WriteLine("Du har"+gunName);
-                cola=true;
+                done=true;
             }
             else
             {
@@ -421,14 +419,12 @@ static void Ekko()
         }
 
         choosingDirectiondescription=Console.ReadLine();
-        bool sprite=false; 
-
-        while (!sprite)
+        while (!done)
         {
             if (directiondescription.Contains(choosingDirectiondescription))
             {
                 Console.WriteLine("Du valde att gå åt"+choosingDirectiondescription);
-                sprite=true;
+                done=true;
             }
             else
             {
@@ -496,15 +492,15 @@ static void Caitlyn()
         Console.WriteLine(item);
     }
 
-    bool cake=false;
+    bool done=false;
     armorName=Console.ReadLine();
 
-    while (!cake)
+    while (!done)
     {
         if (armor.Contains(armorName))
         {
             Console.WriteLine("Du valde"+armorName);
-            cake=true;
+            done=true;
         }
         else
         {
@@ -554,15 +550,15 @@ static void Caitlyn()
         Console.WriteLine(item);
     }
 
-    bool cream=false;
+    
     chooseWayinsruction=Console.ReadLine();
 
-    while (!cream)
+    while (!done)
     {
         if (wayinstruction.Contains(chooseWayinsruction))
         {
             Console.WriteLine("Du valde att gå åt"+chooseWayinsruction);
-            cream=true; 
+            done=true; 
         }
         else
         {
@@ -610,6 +606,7 @@ static void Caitlyn()
     SavingFight(salvage,rogue,"Caitlyn",rogueHp2,armorName,yourArmorHp2);
 }
 
+// Om namnet är Vander
 if(name=="Vander")
 {
     Vander(); 
@@ -628,15 +625,15 @@ static void Vander()
         Console.WriteLine(item); 
     }
 
-    bool water=false; 
+    bool done=false; 
     vapenName=Console.ReadLine(); 
 
-    while (!water)
+    while (!done)
     {
         if (vapen.Contains(vapenName))
         {
             Console.WriteLine("Du har"+vapenName); 
-            water=true; 
+            done=true; 
         }
         else
         {
@@ -688,15 +685,15 @@ static void Vander()
         Console.WriteLine(item); 
     }
 
-    bool ice=false;
+    
     chooseVägberskrivning=Console.ReadLine(); 
 
-    while (!ice)
+    while (!done)
     {
         if (vägbeskrivning.Contains(chooseVägberskrivning))
         {
             Console.WriteLine("Du valde att gå åt"+chooseVägberskrivning); 
-            ice=true; 
+            done=true; 
         }
         else
         {
@@ -765,8 +762,6 @@ static void FirstFight(string weapon, string heroName, string bruteName, int wea
     }
     Console.WriteLine("YAY du slog" + bruteName);
 }
-
-
 
 // Alla komandon för räddnings slagsmålet
 static void SavingFight(string savingName, string bruteName, string heroName, int bruteHp2, string weapon, int weaponHp2)
