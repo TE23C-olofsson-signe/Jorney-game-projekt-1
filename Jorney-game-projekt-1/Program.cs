@@ -170,7 +170,8 @@ static void Jinx()
 
     }
 
-    else if (choosingDirection == "HögerUpp")
+
+    else if (choosingDirection == "Upp")
     {
 
         villainName = "Rictus";
@@ -241,7 +242,7 @@ static void Vi()
     int yourArmhp = 0;
 
     //Vilket vapen man valde  hitpoints och Skurkensnamn 
-    if (armname == "Atlas Goutlet")
+    if (armname == "Atlas Gauntlets")
     {
         Badguy = "Viktor";
         yourArmhp = 30;
