@@ -1,5 +1,5 @@
 ﻿// Karaktärer man kan välja att gå ett äventyr med. 
-bool done = false;
+bool done = true;
 string name = "";
 while (!done)
 {
@@ -44,7 +44,7 @@ static void Jinx()
     Console.WriteLine("Han säger att du måste välja mellan fyra vapen.");
 
 
-    bool clear = false;
+    bool clear = true;
     string weaponname = "";
 
     List<string> arm = ["ShockPistol", "Pistol", "FlameChompers", "Rocketlauncher"];
@@ -117,7 +117,7 @@ static void Jinx()
     Console.WriteLine(" Du börjar gå, du stannar vid en korsning du kan antingen gå ");
     List<string> direction = ["Höger", "Vänster", "Upp", "UppHöger"];
     string choosingDirection = "";
-    bool right = false;
+    bool right = true;
 
 
     foreach (var item in direction)
@@ -214,12 +214,12 @@ static void Vi()
         Console.WriteLine(item);
     }
 
-    bool fool = false;
-    string armname;
-    armname = Console.ReadLine();
+    bool fool = true;
+    string armname="";
 
     while (!fool)
     {
+    armname = Console.ReadLine();
         if (weapon.Contains(armname))
         {
             Console.WriteLine("Du har " + armname);
@@ -269,18 +269,18 @@ static void Vi()
     Console.WriteLine("Du kommer till en korsning du kan välja mellan att gå");
 
     List<string> direktion = ["Höger", "Vänster", "Vänster Vänster", "Höger Höger"];
-    string chooseDirektion; 
+    string chooseDirektion=""; 
 
     foreach (var item in direktion)
     {
         Console.WriteLine(item); 
     }
 
-    bool learn=false;
-    chooseDirektion=Console.ReadLine(); 
+    bool learn=true;
 
     while (!learn)
     {
+        chooseDirektion=Console.ReadLine(); 
         if (direktion.Contains(chooseDirektion))
         {
             Console.WriteLine("Du valde att gå åt"+chooseDirektion); 
@@ -351,7 +351,7 @@ static void Ekko()
 
         // Lista vapen som Ekko kan välja¨
         List<string> Gun =["Sword","Bat","Smoke Grenade","Hoverboard"];
-        string gunName; 
+        string gunName=""; 
 
         foreach (var item in Gun)
         {
@@ -359,12 +359,12 @@ static void Ekko()
         }
 
         //loopens vilkor och hämtar vapentets namn 
-        bool we= false; 
-        gunName=Console.ReadLine();
+        bool we= true; 
 
         // går tills Namnet matchar  listan 
         while (!we)
         {
+            gunName=Console.ReadLine();
             if (Gun.Contains(gunName))
             {
                 Console.WriteLine("Du har"+gunName);
@@ -412,7 +412,7 @@ static void Ekko()
 
         Console.WriteLine("Du kommer till en korsning du kan välja mellan att gå");
         List<string> directiondescription=["Höger","Vänster","Upp","Höger Vänster"];
-        string choosingDirectiondescription;
+        string choosingDirectiondescription="";
 
         foreach (var item in directiondescription)
         {
@@ -420,9 +420,9 @@ static void Ekko()
         }
 
         bool le=false;
-        choosingDirectiondescription=Console.ReadLine();
         while (!le)
         {
+            choosingDirectiondescription=Console.ReadLine();
             if (directiondescription.Contains(choosingDirectiondescription))
             {
                 Console.WriteLine("Du valde att gå åt"+choosingDirectiondescription);
@@ -487,22 +487,22 @@ static void Caitlyn()
     Console.WriteLine("Hon säger att du måste välja mellan fyra vapen.");
 
     List<string> armor=["Peacemaker","Caliber Net","Ace in the Hole","Hextech Riffle"];
-    string armorName;
+    string armorName="";
 
     foreach (var item in armor)
     {
         Console.WriteLine(item);
     }
 
-    bool done=false;
-    armorName=Console.ReadLine();
+    bool fall=true;
 
-    while (!done)
+    while (!fall)
     {
+        armorName=Console.ReadLine();
         if (armor.Contains(armorName))
         {
             Console.WriteLine("Du valde"+armorName);
-            done=true;
+            fall=true;
         }
         else
         {
@@ -545,18 +545,19 @@ static void Caitlyn()
     
     Console.WriteLine("Du kommer till en korsning du kan välja mellan att gå");
     List<string> wayinstruction=["Höger","Höger Vänster","Vänster","Vänster Höger"];
-    string chooseWayinsruction;
+    string chooseWayinsruction="";
 
     foreach (var item in wayinstruction)
     {
         Console.WriteLine(item);
     }
 
-    bool pool=false; 
-    chooseWayinsruction=Console.ReadLine();
+    bool pool=true; 
+    
 
     while (pool)
     {
+        chooseWayinsruction=Console.ReadLine(); 
         if (wayinstruction.Contains(chooseWayinsruction))
         {
             Console.WriteLine("Du valde att gå åt"+chooseWayinsruction);
@@ -620,18 +621,18 @@ static void Vander()
     Console.WriteLine("Han säger att du måste välja ett vapen av fyra"); 
 
     List<string> vapen=["Serpent Bow","Shimmer","Knuckless","Gauntlets"];
-    string vapenName; 
+    string vapenName=""; 
     
     foreach (var item in vapen)
     {
         Console.WriteLine(item); 
     }
 
-    bool pole=false; 
-    vapenName=Console.ReadLine(); 
+    bool pole=true; 
 
     while (!pole)
     {
+        vapenName=Console.ReadLine(); 
         if (vapen.Contains(vapenName))
         {
             Console.WriteLine("Du har"+vapenName); 
@@ -680,18 +681,18 @@ static void Vander()
 
     Console.WriteLine("Du kommer till en korsning du kan välja mellan att gå");
     List<string>vägbeskrivning=["Höger","Vänster","Upp","Uppvänster"];
-    string chooseVägberskrivning; 
+    string chooseVägberskrivning=""; 
 
     foreach (var item in vägbeskrivning )
     {
         Console.WriteLine(item); 
     }
 
-    bool leen=false;
-    chooseVägberskrivning=Console.ReadLine(); 
+    bool leen=true;
 
     while (!leen)
     {
+        chooseVägberskrivning=Console.ReadLine(); 
         if (vägbeskrivning.Contains(chooseVägberskrivning))
         {
             Console.WriteLine("Du valde att gå åt"+chooseVägberskrivning); 
