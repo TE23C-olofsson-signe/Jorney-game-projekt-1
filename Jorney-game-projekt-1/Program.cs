@@ -788,5 +788,4 @@ static void SavingFight(string savingName, string bruteName, string heroName, in
 
 }
 
-
 Console.ReadLine();
