@@ -1,5 +1,5 @@
 ﻿// Karaktärer man kan välja att gå ett äventyr med. 
-bool done = true;
+bool done = false;
 string name = "";
 while (!done)
 {
@@ -44,7 +44,7 @@ static void Jinx()
     Console.WriteLine("Han säger att du måste välja mellan fyra vapen.");
 
 
-    bool clear = true;
+    bool clear = false;
     string weaponname = "";
 
     List<string> arm = ["ShockPistol", "Pistol", "FlameChompers", "Rocketlauncher"];
@@ -117,7 +117,7 @@ static void Jinx()
     Console.WriteLine(" Du börjar gå, du stannar vid en korsning du kan antingen gå ");
     List<string> direction = ["Höger", "Vänster", "Upp", "UppHöger"];
     string choosingDirection = "";
-    bool right = true;
+    bool right = false;
 
 
     foreach (var item in direction)
@@ -214,7 +214,7 @@ static void Vi()
         Console.WriteLine(item);
     }
 
-    bool fool = true;
+    bool fool = false;
     string armname="";
 
     while (!fool)
@@ -276,7 +276,7 @@ static void Vi()
         Console.WriteLine(item); 
     }
 
-    bool learn=true;
+    bool learn=false;
 
     while (!learn)
     {
@@ -359,7 +359,7 @@ static void Ekko()
         }
 
         //loopens vilkor och hämtar vapentets namn 
-        bool we= true; 
+        bool we= false; 
 
         // går tills Namnet matchar  listan 
         while (!we)
@@ -494,7 +494,7 @@ static void Caitlyn()
         Console.WriteLine(item);
     }
 
-    bool fall=true;
+    bool fall=false;
 
     while (!fall)
     {
@@ -552,10 +552,10 @@ static void Caitlyn()
         Console.WriteLine(item);
     }
 
-    bool pool=true; 
+    bool pool=false; 
     
 
-    while (pool)
+    while (!pool)
     {
         chooseWayinsruction=Console.ReadLine(); 
         if (wayinstruction.Contains(chooseWayinsruction))
@@ -628,7 +628,7 @@ static void Vander()
         Console.WriteLine(item); 
     }
 
-    bool pole=true; 
+    bool pole=false; 
 
     while (!pole)
     {
@@ -688,7 +688,7 @@ static void Vander()
         Console.WriteLine(item); 
     }
 
-    bool leen=true;
+    bool leen=false;
 
     while (!leen)
     {
